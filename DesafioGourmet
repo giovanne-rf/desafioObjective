@@ -1,0 +1,56 @@
+import javax.swing.JOptionPane;
+
+public class JogoGourmet {
+	
+	public static void main(String[] args) {
+		String nome =  " ";
+		String tipo =  " ";
+		int resposta;
+		JOptionPane.showMessageDialog(null, "Pense num prato que você gosta ... ");
+		
+		do {	
+			 resposta = JOptionPane.showConfirmDialog(null, "O prato que você gosta é uma massa?");
+			 
+			if (resposta == JOptionPane.YES_OPTION) {
+				resposta = JOptionPane.showConfirmDialog(null, "O prato que você pensou é uma lasanha?");
+				
+				if (resposta == JOptionPane.YES_OPTION) {
+					JOptionPane.showMessageDialog(null, "Acertei !!!!!");
+					nome =  "fim";
+
+				} else {
+					resposta = JOptionPane.showConfirmDialog(null, "O prato que você gosta é Spaguetti ???");
+					if (resposta == JOptionPane.YES_OPTION) {
+						JOptionPane.showMessageDialog(null, "Acertei !!!");
+						nome =  "fim";
+						} else {
+							nome = JOptionPane.showInputDialog("Qual prato você pensou ???");
+							tipo = JOptionPane.showInputDialog( nome + " é _________ mas bolo que chocolate não!");
+							JOptionPane.showInputDialog(null, nome + " é um prato " + tipo + "  mas bolo de chocolate não!");
+							nome =  "fim";
+						}
+				}
+				
+			} 
+			else {
+				JOptionPane.showMessageDialog(null, "Pense num prato que você gosta ... ");
+				
+				 resposta = JOptionPane.showConfirmDialog(null, "O prato que você gosta não é uma massa");		
+				 if (resposta == JOptionPane.YES_OPTION) {
+					 resposta = JOptionPane.showConfirmDialog(null, "O prato que você gosta não é Spaguetti !!!");
+					JOptionPane.showMessageDialog(null, "Acertei");
+					nome =  "fim";
+					} else {
+						nome = JOptionPane.showInputDialog("O prato que você gosta é ___");
+						JOptionPane.showConfirmDialog(null, nome + "e não é Lasanha ");
+						JOptionPane.showMessageDialog(null, "Acertei");
+						nome =  "fim";
+					}
+			}
+			
+		} while (nome != "fim");
+			
+		}
+		
+
+}
